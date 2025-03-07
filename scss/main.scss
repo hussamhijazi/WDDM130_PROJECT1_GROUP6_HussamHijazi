@@ -2,3 +2,90 @@
 @use 'reset';
 @use 'mixins';
 
+body {
+    font-family: variables.$primary-font;
+    background-color: variables.$secondary-color;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    height: 75px;
+    width: auto;
+}
+
+header.custom-header, footer.custom-footer {
+    background-color: variables.$background-color;
+    color: variables.$primary-color;
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('https://media.istockphoto.com/id/1353370305/photo/black-classic-interior-with-sofa-table-carpet-decor-and-moldings-wall-panel-3d-render.jpg?s=612x612&w=0&k=20&c=0mI3WATC5H5vYwjhvae3FKBVzRBUvVOn1KwNjwu2fiU=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -170px;
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-text {
+        text-align: center;
+        color: white;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-top: 1rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 0.875rem;
+    }
+
+    .hero {
+        height: 80vh; 
+    }
+}
