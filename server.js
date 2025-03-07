@@ -111,6 +111,14 @@ app.get('/blog', (req, res) => {
     });
 });
 
+app.get('/faq', (req, res) => {
+    res.render('faq', { 
+        title: 'FAQs', 
+        header: 'Frequently Asked Questions',
+        message: 'Find answers to common questions about our services and offerings.',
+    });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
