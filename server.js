@@ -80,6 +80,13 @@ app.get('/project3', (req, res) => {
     });
 });
 
+app.get('/gallery', (req, res) => {
+    res.render('gallery', { 
+        title: 'Our Gallery', 
+        header: 'Gallery' ,
+        message: 'Explore our collection of stunning images showcasing our work.',
+    });
+});
 
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
