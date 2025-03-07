@@ -103,6 +103,14 @@ app.get('/team', (req, res) => {
      });
 });
 
+app.get('/blog', (req, res) => {
+    res.render('blog', { 
+        title: 'Design Blog', 
+        header: 'Design Blog', 
+        message: 'Stay updated with the latest design trends and tips from our experts.' ,
+    });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
