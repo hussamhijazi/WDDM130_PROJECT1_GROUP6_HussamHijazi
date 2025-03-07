@@ -119,6 +119,17 @@ app.get('/faq', (req, res) => {
     });
 });
 
+app.get('/contact', (req, res) => {
+    res.render('contact', { 
+        title: 'Contact Us', 
+        header: 'Get in Touch with Us', 
+        message: 'We would love to hear from you! Get in touch with us using the form below.',
+        email: 'mj.interiordesignstudio@gmail.com', 
+        phone: '+962792905439', 
+        address: 'An-Nahdah Street, Tariq, Building 30, Amman, Jordan',
+    });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
