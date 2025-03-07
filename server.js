@@ -42,6 +42,14 @@ app.get('/services', (req, res) => {
      });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects', { 
+        title: 'Projects', 
+        header: 'Our Projects', 
+        message: 'Discover the amazing projects we have completed.'
+     });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
