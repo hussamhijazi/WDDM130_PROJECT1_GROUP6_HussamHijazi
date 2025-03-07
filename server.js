@@ -30,6 +30,18 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/services', (req, res) => {
+    res.render('services', { 
+        title: 'Services', 
+        header1: 'Residential Services', 
+        message1: 'Transform your living spaces with our range of residential services.',
+        header2: 'Commercial Services', 
+        message2: 'Enhance your commercial spaces with our professional services.',
+        header3: 'Other Services', 
+        message3: 'Discover more ways we can help you with our additional services.',
+     });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
