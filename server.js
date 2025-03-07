@@ -50,6 +50,37 @@ app.get('/projects', (req, res) => {
      });
 });
 
+app.get('/project1', (req, res) => {
+    res.render('project1' , {
+        title: 'Luxury Apartment in Jabal Amman - Project Details', 
+        header: 'Luxury Apartment', 
+        location: 'Jabal Amman, Jordan',
+        designer: 'Mohammed Jaber',
+        description: 'Located in the prestigious area of Jabal Amman, this luxury villa project showcases exquisite woodwork in various rooms. Our work included crafting custom cabinetry, shelving, and doors, all designed to enhance the elegance and functionality of the spaces. The modern design features high-end finishes, creating a seamless blend of aesthetics and practicality.',
+    });
+});
+
+app.get('/project2', (req, res) => {
+    res.render('project2' , {
+        title: 'Modern Residence in Dabouq - Project Details', 
+        header: 'Modern Residence', 
+        location: 'Dabouq District, Amman',
+        designer: 'Wissam Hijazi',
+        description: 'This modern residence project located in the upscale Dabouq district of Amman features a striking upstairs steel structure. The design aims to seamlessly integrate contemporary aesthetics with structural functionality. Our work involved constructing a robust steel staircase that connects the floors, providing both support and a sleek, modern look. The staircase design ensures durability while adding a visual centerpiece to the residence.',
+    });
+});
+
+app.get('/project3', (req, res) => {
+    res.render('project3' , {
+        title: 'Luxury Villa in Abdoun - Project Details', 
+        header: 'Luxury Villa', 
+        location: 'Abdoun, Amman',
+        designer: 'Wissam Hijazi',
+        description: 'Situated in the prestigious Abdoun area of Amman, this luxury villa project showcases exceptional door work throughout the property. Our work included designing and crafting custom wooden doors with a variety of finishes to complement the villa interior design. Each door was meticulously constructed to ensure both functionality and aesthetic appeal, enhancing the overall elegance of the residence.',
+    });
+});
+
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
