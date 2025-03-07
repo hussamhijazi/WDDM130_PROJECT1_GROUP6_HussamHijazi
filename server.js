@@ -88,6 +88,13 @@ app.get('/gallery', (req, res) => {
     });
 });
 
+app.get('/reviews', (req, res) => {
+    res.render('reviews', { 
+        title: 'Reviews', 
+        header: 'What Our Clients Say' 
+    });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
