@@ -19,6 +19,17 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/about', (req, res) => {
+    res.render('about', { 
+        title: 'About Us', 
+        header: 'About Us', 
+        message1: 'At MJ Interior Design Studio, we specialize in transforming both interiors and exteriors into stunning, functional spaces. From elegant kitchens and stylish bedrooms to custom railings, feature walls, and breathtaking landscapes, we bring creativity and craftsmanship together to enhance beauty, comfort, and functionality in every detail.',
+        message2: 'Our expertise spans every aspect of design, ensuring a seamless process from concept to completion. Whether it’s a full home renovation, an outdoor retreat, or a single-room makeover, we combine innovation with practicality to create spaces that reflect your vision and lifestyle. Using advanced design tools and sustainable materials, we optimize every project for efficiency, durability, and aesthetic excellence.',
+        message3: 'With a keen eye for detail and a deep understanding of modern trends, materials, and construction techniques, we craft interiors and exteriors that are both timeless and contemporary. Our goal is to not only enhance the way you live but to elevate your surroundings into spaces that inspire and endure.',
+        message4: 'Let MJ Interior Design Studio turn your dream space into reality—inside and out.',
+    });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });

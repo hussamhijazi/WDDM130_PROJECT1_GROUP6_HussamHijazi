@@ -89,3 +89,73 @@ header.custom-header, footer.custom-footer {
         height: 80vh; 
     }
 }
+
+.about {
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/736x/66/b9/fe/66b9feec939bc6693ea1c1b21ab392a7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 0px;
+
+    .about-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.1); 
+    }
+
+    .about-text {
+        text-align: center;
+        color: white;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%;
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 1rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            text-align: justify;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .about-text h1 {
+        font-size: 3rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 0.875rem;
+    }
+
+    .about {
+        height: 80vh; 
+    }
+}
