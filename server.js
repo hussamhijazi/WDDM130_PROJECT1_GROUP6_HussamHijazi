@@ -95,6 +95,14 @@ app.get('/reviews', (req, res) => {
     });
 });
 
+app.get('/team', (req, res) => {
+    res.render('team', { 
+        title: 'Our Delicious Gallery', 
+        header: 'Meet the Team',
+        message: 'Discover the talented individuals behind our success.',
+     });
+});
+
 app.listen(HTTP_PORT, () => {
     console.log(`Server listening on: ${HTTP_PORT}`);
 });
