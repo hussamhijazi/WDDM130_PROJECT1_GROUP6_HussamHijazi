@@ -29,8 +29,14 @@ img {
 body {
   font-family: "Helvetica", sans-serif;
   background-color: black;
+}
+
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -43,6 +49,26 @@ header.custom-header, footer.custom-footer {
   color: white;
   position: relative;
   z-index: 2;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+  padding: 20px;
+}
+
+.custom-footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hero {
@@ -977,5 +1003,318 @@ header.custom-header, footer.custom-footer {
   }
   .contact-info p, .contact-info a {
     font-size: 0.875rem;
+  }
+}
+/* Enlarge nav items and change color on hover */
+.nav-link:hover {
+  color: red;
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+/* Ensure card-inner flips properly */
+.card {
+  perspective: 1000px;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the front */
+.card-front {
+  background-color: #fff;
+}
+
+/* Styling for the back */
+.card-back {
+  background-color: #f8f8f8;
+  transform: rotateY(180deg);
+}
+
+/* Base Styles for Project Items */
+.project-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for Project Images */
+.project-image {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Styling for Project Content */
+.project-content {
+  padding: 10px 15px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.project-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.project-location {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Style for Gallery Items */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Lightbox Container */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Lightbox Image */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.gallery-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.gallery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.testimonials {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.testimonial-card {
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.testimonial-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  margin-top: 10px;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.author-role {
+  font-size: 0.875rem;
+  color: #777;
+}
+
+.carousel-prev, .carousel-next {
+  background-color: #f39c12;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: #d9820f;
+}
+
+.testimonials {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  display: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-card.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.testimonial-author {
+  margin-top: 10px;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.author-role {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.carousel-prev, .carousel-next {
+  background-color: #f39c12;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 20px 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: #d9820f;
+}
+
+.faq-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.success-message, .error-message {
+  display: none;
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.contact-info li p {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-info li p:hover {
+  text-decoration: underline;
+}
+
+.copied-message {
+  font-size: 0.9rem;
+  color: #155724;
+  margin-left: 10px;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

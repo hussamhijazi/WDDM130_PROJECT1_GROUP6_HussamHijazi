@@ -32,7 +32,9 @@
   <section class="faq">
     <div class="faq-header">
         <h1><%= header %></h1> 
+        <input type="text" class="faq-search" placeholder="Search FAQs..." />
         <p><%= message %></p>
+
     </div>
     <div class="faq-list">
         <div class="faq-item">
@@ -82,27 +84,7 @@
 
   <%- include('partials/footer') %>
 
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const faqItems = document.querySelectorAll('.faq-item');
-
-          faqItems.forEach(item => {
-              const question = item.querySelector('.faq-question');
-
-              question.addEventListener('click', () => {
-                  question.classList.toggle('active');
-                  const answer = item.querySelector('.faq-answer');
-                  if (question.classList.contains('active')) {
-                      answer.style.display = 'block';
-                  } else {
-                      answer.style.display = 'none';
-                  }
-              });
-          });
-      });
-  </script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="/js/main.js"></script>
 </body>
 </html>
